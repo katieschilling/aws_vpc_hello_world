@@ -11,7 +11,10 @@ data "aws_ami" "linux" {
     values = ["hvm"]
   }
 
-  owners = ["137112412989"] # Canonical
+  filter {
+    name   = "owner-alias"
+    values = ["amazon"]
+  }
 }
 
 resource "aws_instance" "web" {
