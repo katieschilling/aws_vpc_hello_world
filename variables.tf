@@ -12,3 +12,8 @@ variable "aws_region" {
   description = "AWS region in which to launch instances"
   default     = "us-east-1"
 }
+
+variable "vpc_cidr_block" {
+  description = "CIDR for the VPC"
+  default     = "10.0.0.0/16"
+}
