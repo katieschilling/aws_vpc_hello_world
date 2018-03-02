@@ -23,7 +23,7 @@ resource "aws_launch_configuration" "asg_conf" {
   name_prefix                 = "${var.tag_name}-"
   image_id                    = "${data.aws_ami.linux.id}"
   key_name                    = "${var.aws_key_name}"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.instance_type}"
   associate_public_ip_address = true
   security_groups             = ["${aws_security_group.web.id}"]
   enable_monitoring           = false
